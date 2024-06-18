@@ -1,0 +1,115 @@
+@use "../../variables" as *;
+
+.result-container {
+    background: rgba(140, 40, 187, 0.04);
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    Opacity: 0;
+    height: 400px;
+}
+.container{
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+.step-one, .step-two, .step-three, .step-four, .step-five, .step-six {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*.step-one .title, .step-one .subtitle {*/
+/*    opacity: 1; !* Ensure they are visible initially *!*/
+/*    transform: translateY(50px); !* Initial position offscreen *!*/
+/*}*/
+
+[aria-label="animation"] {
+    height: 150px!important;
+    width: 150px!important;
+    margin-bottom: 30px!important;
+    transform: scale(0);
+}
+
+.title{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+}
+.subtitle{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+.subtitle-2{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+
+.title,.subtitle,.subtitle-2 {
+    margin: 0;
+    line-height: 100%;
+    opacity: 0;
+}
+
+.subtitle{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.animation-wrapper{
+    overflow: hidden;
+    height: fit-content;
+    margin-bottom: 17px;
+}
+.subtitles{
+    position: relative;
+    width: 600px;
+    margin-top: 20px;
+}
+.lottie-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.images-container{
+    height: 150px!important;
+    width: 150px!important;
+    margin-bottom: 30px!important;
+    position: relative;
+}
+.step-five-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}

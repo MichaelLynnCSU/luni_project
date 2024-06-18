@@ -1,0 +1,55 @@
+body {
+    background: repeating-linear-gradient(to bottom, #ffffff, #d0c0ff 50%, #ffffff 100%);
+    background-size: 100% 200vh;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/*0: '#CCD3DD',*/
+/*100: '#B5BCCE',*/
+/*200: '#9FA3BE',*/
+/*300: '#8888AF',*/
+/*400: '#72719F',*/
+/*500: '#635B8F',*/
+/*600: '#55447F',*/
+/*700: '#492D6F',*/
+/*800: '#3E175F',*/
+/*900: '#35004E',*/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust height as needed */
+    text-align: center;
+    padding: 20px;
+}
+.text-container {
+    max-width: 1200px; /* Adjust width as needed */
+}
+h1 {
+    font-size: 4em; /* Adjust font-size as needed /
+font-weight: bold;
+margin: 0.5em 0; / Adjust spacing as needed */
+}
+p {
+    font-size: 1.2em; /* Adjust font-size as needed /
+margin-bottom: 2em; / Adjust spacing as needed */
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+.cta-button {
+    padding: 1em 2em; /* Adjust padding as needed /
+font-size: 1em; / Adjust font-size as needed /
+background-color: #000; / Adjust color as needed /
+color: #fff; / Adjust text color as needed */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #333; /* Adjust hover color as needed */
+}

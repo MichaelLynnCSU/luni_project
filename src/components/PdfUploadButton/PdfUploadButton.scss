@@ -1,0 +1,74 @@
+@use "../../variables" as *;
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  min-height: 400px;
+  height: 400px;
+  padding: 40px;
+  background: rgba(140, 40, 187, 0.04);
+  transition: transform 0.3s ease;
+}
+
+.ant-upload-list-item-name, .anticon svg, .upload-icon {
+  color: black!important;
+}
+
+button.ant-btn.ant-btn-text.ant-btn-sm.ant-btn-icon-only.ant-upload-list-item-action:hover,
+.upload-container .ant-upload.ant-upload-drag:hover,
+.ant-upload-drag:hover,
+.ant-upload-drag:hover .ant-upload {
+  background: transparent !important;
+  border-color: $color-primary-dark !important;
+}
+
+.ant-upload-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+.upload-container .ant-btn-primary{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.upload-container h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 100%;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.upload-container .ant-btn-primary {
+  padding: 25px;
+  font-size: 18px;
+  background-color: $color-primary;
+  border-color: $color-primary;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.upload-container .ant-btn:hover {
+  background-color: $color-primary-dark !important;
+  border-color: $color-primary-dark !important;
+}
+
+.upload-container .ant-upload.ant-upload-drag {
+  height: 100%;
+}
+
+.ant-upload.ant-upload-drag {
+  border-color: $color-primary;
+}

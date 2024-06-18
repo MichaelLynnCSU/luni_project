@@ -1,0 +1,64 @@
+/* features.scss */
+
+.section {
+  text-align: center;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+}
+
+.container {
+  max-width: 699px;
+  margin: auto;
+}
+
+.title {
+  color: var(--Dark-Blue, #052443);
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card {
+  width: 300px;
+  text-align: left;
+
+  .ant-card-body {
+    padding: 20px;
+  }
+
+  @media (max-width: 767px) {
+    width: 80%;
+  }
+}
+
+.icon {
+  width: 53px;
+  height: 53px;
+  margin-bottom: 10px;
+}
+
+.text {
+  color: #000;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+}

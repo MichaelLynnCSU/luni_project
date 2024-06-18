@@ -1,0 +1,97 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.mucard {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Maintain aspect ratio (1:1) */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.mucard-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+}
+.mucard:hover {
+    background-color: #333;
+    color: white;
+}
+
+.mucard-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.mucard-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .mucard-text {
+        font-size: 14px;
+    }
+
+    .mucard-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .mucard-text {
+        font-size: 12px;
+    }
+
+    .mucard-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mucard {
+        max-width: calc(50% - 20px);
+    }
+
+    .mucard-text {
+        font-size: 14px;
+    }
+
+    .mucard-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mucard {
+        max-width: 100%;
+    }
+
+    .mucard-text {
+        font-size: 12px;
+    }
+
+    .mucard-title {
+        font-size: 18px;
+    }
+}

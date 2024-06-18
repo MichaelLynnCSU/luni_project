@@ -1,0 +1,43 @@
+/* Pricing.css */
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #3E175F; /* Using the exact purple color from the footer */
+    color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 20px);
+    }
+}
+
+.buy-button {
+    display: block;
+    background-color: #fff;
+    color: #9c27b0; /* Using the same purple color for the button text */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buy-button:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,14 @@
+@use "variables" as *;
+
+.header-image {
+  width: 80%; /* Default to 100% width */
+
+  /* Apply max-width of 400px when viewport is 900px or smaller */
+  @media (max-width: 900px) {
+    max-width: 400px;
+  }
+}
+
+#lingo-chatbot layouts-inline {
+  width: 100%;
+}
