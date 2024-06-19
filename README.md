@@ -11,9 +11,60 @@
 - **building new depends**: This section explains how to rebuild the json
 - npm install
   
-=======
+# Project Name
 
-- **Running the Docker Container**: This section explains how to run the Docker container based on the `luni_v1` image. It specifies the `-p 3000:3000` flag to map port 3000 from the container to port 3000 on the host machine.
+Brief description or introduction to your project.
 
->>>>>>> Stashed changes
-By using this format in your `README.md`, you provide clear instructions for anyone visiting your GitHub repository on how to build and run your Dockerized application. Adjust the instructions and details as necessary based on your specific Docker setup and application requirements.
+## Files and Directories to Remove
+
+Before proceeding, ensure that you have backed up any important files you do not want to lose.
+
+### Directories
+
+- `node_modules/`
+- `dist/`
+- `.idea/`
+- `.docker/`
+- `functions/`
+- `public/`
+- `uploads/`
+- `.firebase/`
+
+### Files
+
+- `.env*` (e.g., `.env-smaple`)
+- `filelist.txt`
+- `file_and_dir_list.txt`
+- `test-results.txt`
+- `firebase.json`
+- `firestore.indexes.json`
+- `firestore.rules`
+- `package-lock.json`
+
+## Instructions for Removal
+
+1. **Verify**: Double-check your repository to ensure these files and directories are present.
+   
+2. **Git Commands**: Use the following commands to remove them from Git's tracking without deleting them from your local filesystem:
+
+   ```bash
+   git rm -r --cached node_modules
+   git rm -r --cached dist
+   git rm -r --cached .env*
+   git rm -r --cached .idea
+   git rm -r --cached .docker
+   git rm -r --cached functions
+   git rm -r --cached public
+   git rm -r --cached uploads
+   git rm -r --cached filelist.txt
+   git rm -r --cached file_and_dir_list.txt
+   git rm -r --cached test-results.txt
+   git rm -r --cached .firebase
+   git rm -r --cached firebase.json
+   git rm -r --cached firestore.indexes.json
+   git rm -r --cached firestore.rules
+   git rm -r --cached README.md
+   git rm -r --cached package-lock.json
+
+
+
