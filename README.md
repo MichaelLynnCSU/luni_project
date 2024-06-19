@@ -11,7 +11,7 @@
 - **building new depends**: This section explains how to rebuild the json
 - npm install
   
-# Project Name
+# Luni project
 
 Brief description or introduction to your project.
 
@@ -41,30 +41,68 @@ Before proceeding, ensure that you have backed up any important files you do not
 - `firestore.rules`
 - `package-lock.json`
 
-## Instructions for Removal
+## Running Tests
 
-1. **Verify**: Double-check your repository to ensure these files and directories are present.
-   
-2. **Git Commands**: Use the following commands to remove them from Git's tracking without deleting them from your local filesystem:
+To ensure the stability and functionality of the project, run tests using Jest.
 
-   ```bash
-   git rm -r --cached node_modules
-   git rm -r --cached dist
-   git rm -r --cached .env*
-   git rm -r --cached .idea
-   git rm -r --cached .docker
-   git rm -r --cached functions
-   git rm -r --cached public
-   git rm -r --cached uploads
-   git rm -r --cached filelist.txt
-   git rm -r --cached file_and_dir_list.txt
-   git rm -r --cached test-results.txt
-   git rm -r --cached .firebase
-   git rm -r --cached firebase.json
-   git rm -r --cached firestore.indexes.json
-   git rm -r --cached firestore.rules
-   git rm -r --cached README.md
-   git rm -r --cached package-lock.json
+### 1. Install Dependencies
 
+Before running tests, install all required dependencies:
 
+```bash
+npm install
+```
 
+### 2. Configure Jest
+
+Ensure Jest is properly configured for your project. Modify `jest.config.js` to match your project's structure and requirements. Here’s an example configuration:
+
+```javascript
+// jest.config.js
+module.exports = {
+  testMatch: [
+    '**/__tests__/**/*.[jt]s?(x)',
+    '**/?(*.)+(spec|test).[tj]s?(x)',
+    '**/src/**/*.test.[jt]s?(x)',
+  ],
+  testPathIgnorePatterns: [
+    '\\\\node_modules\\\\'
+  ],
+  roots: ["<rootDir>/src"],
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
+  moduleNameMapper: {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  },
+  testEnvironment: "jsdom",
+  transform: {
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  transformIgnorePatterns: [
+    "/node_modules/(?!(@ant-design|antd|other-package)/)"
+  ]
+  // other Jest configurations...
+};
+```
+
+### 3. Run Tests
+
+Execute tests using Jest:
+
+```bash
+npm test --verbose --config jest.config.js
+```
+
+- `--verbose`: Provides detailed output for debugging purposes.
+- `--config jest.config.js`: Specifies the Jest configuration file to use.
+
+### 4. Review Test Results
+
+After running tests, Jest displays test results in the terminal. Check the output to ensure all tests pass successfully.
+
+### 5. Integration with CI/CD
+
+For continuous integration (CI) setups, integrate Jest testing into your pipeline to automate testing and ensure code quality before deployment.
+
+---
+
+Make sure to customize the paths, configurations, and instructions based on your specific project setup and requirements. This README section provides a clear guide for developers to run tests effectively and maintain code quality throughout the development process.
