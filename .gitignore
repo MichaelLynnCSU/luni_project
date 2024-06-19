@@ -1,1 +1,32 @@
+# Dependency directories
 node_modules/
+dist/
+
+# Environment files
+.env*
+
+# IDE-specific directories
+.idea/
+
+# Build and temporary directories
+.docker/
+functions/
+public/
+uploads/
+
+# Generated files
+filelist.txt
+file_and_dir_list.txt
+test-results.txt
+
+# Firebase files
+.firebase/
+firebase.json
+firestore.indexes.json
+firestore.rules
+
+# Miscellaneous files
+README.md  # Assuming this is your project README
+
+# Node.js specific files
+package-lock.json
