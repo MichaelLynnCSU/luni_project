@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "build:be": "babel ./backend/src -d ./backend/dist",
     "start:be": "node ./backend/server.js"
+	"test": "jest --config=jest.config.js --verbose"
   },
   "dependencies": {
     "14": "^3.1.6",
