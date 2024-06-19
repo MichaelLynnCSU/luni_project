@@ -2,7 +2,7 @@
 ### Explanation:
 
 - **Building the Docker Image**: This section explains how to build your Docker image named `luni_v1` from the Dockerfile located in the current directory (`.`).
-docker build . -t luni_9901
+- docker build . -t luni_9901
 
 - **Running the Docker Container**: This section explains how to run the Docker container based on the `luni_v1` image. It specifies the `-p 3000:3000` flag to map port 3000 from the container to port 3000 on the host machine.
 - docker run -p 3000:3000
