@@ -19,6 +19,9 @@ filelist.txt
 file_and_dir_list.txt
 test-results.txt
 
+src/firebaseauth.js
+src/aws-config.js
+
 # Firebase files
 .firebase/
 firebase.json
