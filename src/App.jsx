@@ -9,14 +9,15 @@ import Loginpage from "./pages/LoginPage/Login.jsx";
 import Headshot from "./pages/headshot/headshot.jsx";
 import ProtectedRoute from './pages/LoginPage/ProtectedRoute.jsx';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from "./firebaseauth.js";
+import { auth } from "./firebaseauth.js"; // Ensure this imports 'auth' after Firebase initialization
 import LogoutButton from '../src/components/Logout/Logout.jsx';
 import FourOFour from "./pages/Fourofour/Fourofour.jsx";
 import Home from "./pages/Home/Home.jsx";
 
 function App() {
+    // Ensure Firebase is initialized before using useAuthState
     const [user, loading] = useAuthState(auth);
-    console.log("Is there a user logged in ? : ", user);
+    console.log("Is there a user logged in? : ", user);
 
     const router = createBrowserRouter([
         {
