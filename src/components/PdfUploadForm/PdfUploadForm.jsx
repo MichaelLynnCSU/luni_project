@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useCallback } from 'react';
 import { Upload, message, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
@@ -6,13 +7,22 @@ import gsap from 'gsap';
 import ResultComponent from '../ResultComponent/ResultComponent.jsx';
 import * as pdfjsLib from 'pdfjs-dist';
 import axios from 'axios';
+import { getApps, initializeApp } from 'firebase/app';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import firebaseConfig from '../../firebaseauth';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = '../../node_modules/pdfjs-dist/build/pdf.worker.min.js';
 
 const { Dragger } = Upload;
 
-const storage = getStorage();
+let app;
+if (getApps().length === 0) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApps()[0];
+}
+
+const storage = getStorage(app);
 const storageRef = ref(storage);
 
 const useFileHandler = () => {
@@ -37,7 +47,6 @@ const useFileHandler = () => {
 };
 
 const PdfUploadForm = ({ setPDF, setResumeData, setOriginalFile }) => {
-  console.log("AYO WE HERE PDFUPLOADFORM.JSX");
   const [submitted, setSubmitted] = useState(false);
   const { fileList, beforeUpload, onChange } = useFileHandler();
 
