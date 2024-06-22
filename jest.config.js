@@ -1,26 +1,16 @@
+// jest.config.js
 module.exports = {
-  testMatch: [
-    '**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test).[tj]s?(x)',
-    '**/src/**/*.test.[jt]s?(x)',
-  ],
-  testPathIgnorePatterns: [
-    '\\\\node_modules\\\\'
-  ],
-  roots: ["<rootDir>/src"],
-  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
-  moduleNameMapper: {
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-    // Add a mapping for canvas.node to the actual path in node_modules
-    '^canvas$': '<rootDir>/node_modules/canvas/build/Release/canvas.node',
-    // Adjust the path based on where canvas.node is located in your node_modules
-  },
-  testEnvironment: "jsdom",
+  // other Jest configurations...
   transform: {
-    "^.+\\.(js|jsx)$": "babel-jest"
+    '^.+\\.jsx?$': 'babel-jest', // transform JS/JSX files with Babel
+    '\\.(png|jpg|jpeg|gif|svg)$': '<rootDir>/__mocks__/fileMock.js', // handle image files with the mock file
+    '\\.scss$': 'jest-transform-stub', // ignore SCSS files during testing
   },
   transformIgnorePatterns: [
-    "/node_modules/(?!(@ant-design|antd|other-package)/)"
+    "node_modules/(?!(axios|pdfjs-dist)/)"
   ],
-  // Other Jest configurations...
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy', // if you have CSS/LESS files, mock them as well
+    '^pdfjs-dist$': '<rootDir>/node_modules/pdfjs-dist/build/pdf.js'
+  },
 };
