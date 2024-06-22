@@ -20,7 +20,7 @@ file_and_dir_list.txt
 test-results.txt
 
 src/firebaseauth.js
-aws-config.js
+src/aws-config.js
 
 # Firebase files
 .firebase/
